@@ -19,6 +19,10 @@ public class BinaryTreeTest {
         binaryTree.getRoot().setRight(new Node(3));
         binaryTree.getRoot().getLeft().setLeft(new Node(4));
         binaryTree.getRoot().getLeft().setRight(new Node(5));
+        binaryTree.getRoot().getRight().setLeft(new Node(6));
+        binaryTree.getRoot().getRight().setRight(new Node(7));
+        binaryTree.getRoot().getLeft().getLeft().setLeft(new Node(8));
+        binaryTree.getRoot().getLeft().getLeft().setRight(new Node(9));
     }
 
     @Test
@@ -77,6 +81,10 @@ public class BinaryTreeTest {
         expected.add(3);
         expected.add(4);
         expected.add(5);
+        expected.add(6);
+        expected.add(7);
+        expected.add(8);
+        expected.add(9);
 
         List<Integer> actual = binaryTree.getNodesBreadthFirst(binaryTree.getRoot())
                 .stream()
